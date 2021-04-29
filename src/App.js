@@ -1,34 +1,33 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
-} from "react-router-dom";
-import axios from 'axios';
+} from 'react-router-dom';
 import Stock from './containers/Stock';
 
 const App = () => {
   return (
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/stock">Public Company</Link>
-            </li>
-          </ul>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/stock">Public Company</Link>
+          </li>
+        </ul>
 
-          <hr/>
+        <hr/>
 
-          <Switch>
-            <Route exact path="*">
-              <Stock/>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-  )
-}
+        <Switch>
+          <Route exact path="*">
+            <Stock/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;
 
