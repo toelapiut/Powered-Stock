@@ -1,0 +1,94 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "plugins": [
+    "react",
+    "jest",
+    "babel"
+  ],
+  "rules": {
+    "react/jsx-handler-names": 2,
+    "react/require-render-return": 2,
+    "react/no-unused-state": 2,
+    "react/prefer-stateless-function": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/jsx-key": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-uses-react": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-no-undef": 2,
+    "react/no-multi-comp": 2,
+    "babel/no-unused-expressions": 1,
+    "react/jsx-no-bind": [
+      2,
+      {
+        "ignoreRefs": false,
+        "allowArrowFunctions": true,
+        "allowBind": false
+      }
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "react/jsx-pascal-case": 2,
+    "react/prop-types": 2,
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "test/*.spec.js"
+      ],
+      // Or *.test.js
+      "rules": {
+        "require-jsdoc": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}
+
+//    "plugin:jest/all"

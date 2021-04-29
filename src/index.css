@@ -1,13 +1,236 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+
+@layer base {
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Light.eot');
+        src: local('Nexa Light'), local('../assets/fonts/Nexa-Light'),
+        url('assets/fonts/Nexa-Light.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Light.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Light.woff') format('woff'),
+        url('assets/fonts/Nexa-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Thin.eot');
+        src: local('Nexa Thin'), local('../assets/fonts/Nexa-Thin'),
+        url('assets/fonts/Nexa-Thin.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Thin.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Thin.woff') format('woff'),
+        url('assets/fonts/Nexa-Thin.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-HeavyItalic.eot');
+        src: local('Nexa Heavy Italic'), local('../assets/fonts/Nexa-HeavyItalic'),
+        url('assets/fonts/Nexa-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-HeavyItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-HeavyItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-HeavyItalic.ttf') format('truetype');
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-XBold.eot');
+        src: local('Nexa XBold'), local('../assets/fonts/Nexa-XBold'),
+        url('assets/fonts/Nexa-XBold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-XBold.woff2') format('woff2'),
+        url('assets/fonts/Nexa-XBold.woff') format('woff'),
+        url('assets/fonts/Nexa-XBold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-BlackItalic.eot');
+        src: local('Nexa Black Italic'), local('../assets/fonts/Nexa-BlackItalic'),
+        url('assets/fonts/Nexa-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-BlackItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-BlackItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-BlackItalic.ttf') format('truetype');
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-BookItalic.eot');
+        src: local('Nexa Book Italic'), local('../assets/fonts/Nexa-BookItalic'),
+        url('assets/fonts/Nexa-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-BookItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-BookItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-BookItalic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Bold.eot');
+        src: local('Nexa Bold'), local('../assets/fonts/Nexa-Bold'),
+        url('assets/fonts/Nexa-Bold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Bold.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Bold.woff') format('woff'),
+        url('assets/fonts/Nexa-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-BoldItalic.eot');
+        src: local('Nexa Bold Italic'), local('../assets/fonts/Nexa-BoldItalic'),
+        url('assets/fonts/Nexa-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-BoldItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-BoldItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-BoldItalic.ttf') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-ThinItalic.eot');
+        src: local('Nexa Thin Italic'), local('../assets/fonts/Nexa-ThinItalic'),
+        url('assets/fonts/Nexa-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-ThinItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-ThinItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-ThinItalic.ttf') format('truetype');
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Italic.eot');
+        src: local('Nexa Italic'), local('../assets/fonts/Nexa-Italic'),
+        url('assets/fonts/Nexa-Italic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Italic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Italic.woff') format('woff'),
+        url('assets/fonts/Nexa-Italic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Regular.eot');
+        src: local('Nexa Regular'), local('../assets/fonts/Nexa-Regular'),
+        url('assets/fonts/Nexa-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Regular.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Regular.woff') format('woff'),
+        url('assets/fonts/Nexa-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Black.eot');
+        src: local('Nexa Black'), local('../assets/fonts/Nexa-Black'),
+        url('assets/fonts/Nexa-Black.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Black.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Black.woff') format('woff'),
+        url('assets/fonts/Nexa-Black.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-XBoldItalic.eot');
+        src: local('Nexa XBold Italic'), local('../assets/fonts/Nexa-XBoldItalic'),
+        url('assets/fonts/Nexa-XBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-XBoldItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-XBoldItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-XBoldItalic.ttf') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Book.eot');
+        src: local('Nexa Book'), local('../assets/fonts/Nexa-Book'),
+        url('assets/fonts/Nexa-Book.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Book.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Book.woff') format('woff'),
+        url('assets/fonts/Nexa-Book.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-LightItalic.eot');
+        src: local('Nexa Light Italic'), local('../assets/fonts/Nexa-LightItalic'),
+        url('assets/fonts/Nexa-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-LightItalic.woff2') format('woff2'),
+        url('assets/fonts/Nexa-LightItalic.woff') format('woff'),
+        url('assets/fonts/Nexa-LightItalic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('assets/fonts/Nexa-Heavy.eot');
+        src: local('Nexa Heavy'), local('../assets/fonts/Nexa-Heavy'),
+        url('assets/fonts/Nexa-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nexa-Heavy.woff2') format('woff2'),
+        url('assets/fonts/Nexa-Heavy.woff') format('woff'),
+        url('assets/fonts/Nexa-Heavy.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    @apply font-sans font-normal text-base antialiased text-white;
+}
+
+body {
+    @apply m-0 overflow-x-hidden bg-navy;
+}
+
+p {
+    @apply m-0 text-base;
+}
+
+h1 {
+    @apply text-5xl font-black;
+}
+
+h2 {
+    @apply text-4xl
+}
+
+h3 {
+    @apply text-3xl
+}
+
+h4 {
+    @apply text-2xl
+}
+
+h5 {
+    @apply text-xl
+}
+
+h6 {
+    @apply text-lg
 }
