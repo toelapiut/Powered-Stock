@@ -4,13 +4,13 @@ export const quandl = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Allow': 'GET, PUT, HEAD, OPTIONS'
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
+    'Access-Control-Allow-Credentials' : true
   }
 });
 
 quandl.interceptors.request.use((config) => {
   config.params = config.params || {};
-  config.params['key'] = process.env.REACT_APP_API_KEY;
+  config.params['api_key'] = process.env.REACT_APP_API_KEY;
   return config;
 });

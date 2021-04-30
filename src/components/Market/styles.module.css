@@ -1,0 +1,22 @@
+.container {
+}
+
+.shares {
+    @apply flex flex-row justify-between mb-2;
+}
+
+.ticker{
+    @apply text-xl font-black
+}
+
+.revenue{
+    @apply font-bold text-white;
+}
+
+.company{
+    @apply flex flex-row justify-between items-center;
+}
+
+.name{
+    @apply font-bold text-liberty text-sm capitalize;
+}
