@@ -46,3 +46,7 @@ export const checkPositivity = (num) => {
   let check = Math.sign(Number(num));
   return check !== -1;
 };
+
+export const findTestByAttr = (component, attr) => {
+  return  component.find(`[data-test='${attr}']`);
+};

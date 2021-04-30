@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 export const Market = ({ticker,totalRevenue, companyName, fullCompanyName, openingMargin}) => {
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}  data-test={'market-container'}>
       <div className={styles.shares}>
         <h1>{ticker}</h1>
         <p className={styles.revenue}>{totalRevenue.toLocaleString()}</p>
@@ -23,7 +23,6 @@ export const Market = ({ticker,totalRevenue, companyName, fullCompanyName, openi
 
 Market.propTypes = {
   ticker: PropTypes.string.isRequired,
-  active: PropTypes.string.isRequired,
   companyName: PropTypes.string.isRequired,
   fullCompanyName: PropTypes.string.isRequired,
   openingMargin: PropTypes.number.isRequired,

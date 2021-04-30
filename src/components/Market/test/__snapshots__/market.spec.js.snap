@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Market Component should render snapshot correctly 1`] = `
+<div>
+  <h1>
+    Hello stocks
+  </h1>
+</div>
+`;

@@ -9,16 +9,16 @@
 }
 
 .unordered {
-    @apply py-5
+    @apply pt-0
 }
 
 .wrap{
-    @apply mx-4
+    @apply mx-0
 }
 
 .list {
     @apply py-4 border-koamaru border-b mx-4 px-2;
-    width: 24em;
+    width: 22em;
 }
 
 .active{
