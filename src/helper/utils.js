@@ -1,4 +1,5 @@
 import humps from 'humps';
+import checkPropTypes from 'check-prop-types';
 
 export const transpose = (rows, cols) => {
   /*
@@ -49,4 +50,9 @@ export const checkPositivity = (num) => {
 
 export const findTestByAttr = (component, attr) => {
   return  component.find(`[data-test='${attr}']`);
+};
+
+
+export const checkProps = (component, expectedProps) => {
+  checkPropTypes(component.propTypes, expectedProps, 'props', component.name);
 };

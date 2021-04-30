@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should render snapshot correctly 1`] = `
+<div
+  className="container"
+>
+  <h1
+    className="title"
+  >
+    Market
+  </h1>
+  <p
+    className="header"
+  >
+    Powered by People
+  </p>
+</div>
+`;
