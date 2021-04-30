@@ -5,7 +5,7 @@
 
 .sidebar{
     @apply overflow-y-scroll;
-    max-height: calc(100vh - 10em);
+    max-height: calc(100vh - 7em);
 }
 
 .unordered {

@@ -6,7 +6,7 @@ import {checkPositivity} from '../../helper/utils';
 export const MarketMargin = ({margin}) => {
   let className = checkPositivity(margin) ? styles.bull : styles.bear;
   return (
-    <div className={`${className} ${styles.container}`}>
+    <div className={`${className} ${styles.container}`} data-test={'market-margin-container'}>
       <p className={styles.margin}>{margin}</p>
     </div>
   );

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarketMargin Component Market Margin renders correctly should render snapshot correctly 1`] = `
+<div
+  className="bear container"
+  data-test="market-margin-container"
+>
+  <p
+    className="margin"
+  >
+    -123
+  </p>
+</div>
+`;

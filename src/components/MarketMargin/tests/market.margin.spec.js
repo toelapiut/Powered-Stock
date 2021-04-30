@@ -1,26 +1,21 @@
 import React from 'react';
-import Market from '../';
+import MarketMargin from '../';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {findTestByAttr, checkProps} from '../../../helper/utils';
 
 
 const setUp = (props = {}) => {
-  return shallow(<Market {...props}/>);
+  return shallow(<MarketMargin {...props}/>);
 };
 
 let props = {
-  active: 'false',
-  ticker: 'APPL',
-  totalRevenue: 45244,
-  companyName: 'Apple Inc',
-  fullCompanyName: 'Apple Incorporation',
-  openingMargin: -1.00
+  margin:-123
 };
 
-describe('Market Component', () => {
+describe('MarketMargin Component', () => {
 
-  describe('Component renders tests', () => {
+  describe('Market Margin renders correctly', () => {
     let component;
     beforeAll(() => {
       component = setUp(props);
@@ -31,7 +26,7 @@ describe('Market Component', () => {
     });
 
     it('should render without error', () => {
-      const wrapper = findTestByAttr(component, 'market-container');
+      const wrapper = findTestByAttr(component, 'market-margin-container');
       expect(wrapper.length).toBe(1);
     });
 
@@ -39,7 +34,7 @@ describe('Market Component', () => {
 
   describe('Check property types', () => {
     it('should not throw a warning', () => {
-      const propErr = checkProps(Market, props);
+      const propErr = checkProps(MarketMargin, props);
       expect(propErr).toBeUndefined();
     });
   });
