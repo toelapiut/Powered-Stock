@@ -5,6 +5,11 @@
     "jest": true,
     "jest/globals": true
   },
+  "globals": {
+    "document": true,
+    "foo": true,
+    "window": true
+  },
   "extends": [
     "eslint:recommended"
   ],

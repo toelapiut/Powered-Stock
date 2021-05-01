@@ -1,0 +1,7 @@
+.container {
+    @apply mx-6
+}
+
+.areaClose {
+    @apply bg-koamaru p-3 rounded-lg my-6
+}

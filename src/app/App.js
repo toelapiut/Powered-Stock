@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Stock from '../containers/Stock';
 import Market from '../components/Market';
-import Header from '../components/Header';
+import Brand from '../components/Brand';
 
 // import useSWR from 'swr';
 // import {url} from '../helper/url';
@@ -24,7 +24,7 @@ let transposed = toCamelCase(transpose(rows, columns));
 
 // const fetcher = url => quandl.get(url).then(res => res.data);
 
-const App = () => {
+export const App = () => {
   console.log({quandl, url: process.env.REACT_APP_BASE_URL});
   // const {data, error} = useSWR(`${url.markets}/ZACKS/CP?`, fetcher);
   // eslint-disable-next-line no-unused-vars
@@ -54,7 +54,7 @@ const App = () => {
     <Router>
       <div className={styles.container}>
         <div>
-          <Header/>
+          <Brand/>
           <div className={styles.sidebar}>
             <ul className={styles.unordered}>
               {markets.map(({ticker, compName, compName2, zacksOperMarginQ0, totRevenueF0}) =>
@@ -88,6 +88,4 @@ const App = () => {
     </Router>
   );
 };
-
-export default App;
 

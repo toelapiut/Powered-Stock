@@ -2,8 +2,13 @@
 
 exports[`should render correctly 1`] = `
 <div>
-  <h1>
-    Hello stocks
-  </h1>
+  <StockScreen
+    end="29 April, 2003"
+    name="Apple Inc (AAPL) Prices, Dividends, Splits and Trading Volume"
+    onChangeDates={[Function]}
+    start="29 April, 1994"
+    stocks={Array []}
+    ticker="AAPL"
+  />
 </div>
 `;

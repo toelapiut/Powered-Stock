@@ -1,0 +1,19 @@
+.container{
+    @apply flex flex-row  py-3 px-6 bg-navy rounded-lg
+}
+
+.start{
+
+}
+
+.start:nth-child(1){
+    @apply pr-10 mr-10 border-r border-koamaru border-dashed
+}
+
+.label{
+    @apply font-bold text-sm text-liberty leading-6
+}
+
+.date{
+    @apply font-bold text-base text-white
+}

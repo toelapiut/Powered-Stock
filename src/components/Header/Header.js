@@ -1,20 +1,31 @@
 import React from 'react';
-import styles from './styles.module.css';
 import PropTypes from 'prop-types';
+import DateInput from '../../components/DateInput';
+import styles from './header.module.css';
 
-export const  Header = ({title}) => {
+
+
+export const Header = ({name, ticker, start, end, onChangeDates}) => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{title}</h1>
-      <p className={styles.header}>Powered by People</p>
+      <div>
+        <h1 className={styles.ticker}>{ticker}</h1>
+        <p className={styles.name}>{name}</p>
+      </div>
+      <DateInput
+        start={start}
+        end={end}
+        onChangeDates={onChangeDates}
+      />
     </div>
   );
 };
 
-Header.defaultProps = {
-  title: 'Market'
+Header.propTypes = {
+  name:PropTypes.string.isRequired,
+  ticker:PropTypes.string.isRequired,
+  start: PropTypes.string,
+  end: PropTypes.string,
+  onChangeDates: PropTypes.func,
 };
 
-Header.propTypes = {
-  title: PropTypes.string
-};

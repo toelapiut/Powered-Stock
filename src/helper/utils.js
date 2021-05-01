@@ -1,5 +1,7 @@
 import humps from 'humps';
 import checkPropTypes from 'check-prop-types';
+import {timeFormat} from 'd3-time-format';
+import {bisector} from 'd3-array';
 
 export const transpose = (rows, cols) => {
   /*
@@ -48,11 +50,27 @@ export const checkPositivity = (num) => {
   return check !== -1;
 };
 
-export const findTestByAttr = (component, attr) => {
-  return  component.find(`[data-test='${attr}']`);
+export const formatDate =  timeFormat('%b %d, \'%y');
+
+export const getDate = (d) => new Date(d.date);
+
+export const getStockValue = (d) => d.close;
+
+export const bisectDate = bisector(d => new Date(d.date)).left;
+
+export const getWindowDimensions =()=> {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
 };
 
+export const findTestByAttr = (component, attr) => {
+  return component.find(`[data-test='${attr}']`);
+};
 
 export const checkProps = (component, expectedProps) => {
   checkPropTypes(component.propTypes, expectedProps, 'props', component.name);
 };
+
