@@ -1,4 +1,4 @@
-import {Stock} from './stock';
+import {Stock} from './Stock';
 
 
 export default Stock;

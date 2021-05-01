@@ -1,0 +1,12 @@
+.container {
+    @apply pt-10 px-5 mb-5
+}
+
+.title {
+    @apply text-3xl font-black text-white
+}
+
+
+.header {
+    @apply text-koamaru font-bold text-base;
+}

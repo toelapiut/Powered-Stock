@@ -1,0 +1,17 @@
+
+.bear, .bull{
+    @apply rounded
+}
+.bull{
+    @apply bg-green;
+}
+.bear{
+    @apply bg-red;
+}
+.container{
+    @apply px-2 pt-1
+}
+
+.margin{
+    @apply font-bold text-xs leading-4
+}

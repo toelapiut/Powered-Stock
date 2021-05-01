@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Market Component Component renders tests should render snapshot correctly 1`] = `
+<div
+  className="container"
+  data-test="market-container"
+>
+  <div
+    className="shares"
+  >
+    <h1>
+      APPL
+    </h1>
+    <p
+      className="revenue"
+    >
+      45,244
+    </p>
+  </div>
+  <div
+    className="company"
+  >
+    <p
+      className="name"
+    >
+      apple inc
+    </p>
+    <MarketMargin
+      fullCompanyName="Apple Incorporation"
+      margin={-1}
+    />
+  </div>
+</div>
+`;

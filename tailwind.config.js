@@ -7,6 +7,7 @@ module.exports = {
     colors: {
       navy: '#02042F',
       koamaru: '#222352',
+      liberty: '#545798;',
       red: '#EB2F2F',
       green: '#2FEB5A',
       white: '#ffffff'

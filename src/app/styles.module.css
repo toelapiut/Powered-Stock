@@ -1,0 +1,26 @@
+.container{
+    max-height: 100vh;
+    @apply overflow-hidden flex flex-row;
+}
+
+.sidebar{
+    @apply overflow-y-scroll;
+    max-height: calc(100vh - 7em);
+}
+
+.unordered {
+    @apply pt-0
+}
+
+.wrap{
+    @apply mx-0
+}
+
+.list {
+    @apply py-4 border-koamaru border-b mx-4 px-2;
+    width: 22em;
+}
+
+.active{
+    @apply bg-koamaru rounded-lg
+}
