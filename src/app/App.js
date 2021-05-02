@@ -72,7 +72,7 @@ export const App = () => {
         </div>
         <div>
           <Stock
-            active={active}
+            ticker={active.ticker}
           />
         </div>
       </div>

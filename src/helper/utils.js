@@ -37,6 +37,18 @@ export const transpose = (rows, cols) => {
 };
 
 
+export const transposeStock = (rows) => {
+  let data = [];
+  for (let row of rows) {
+    let obj = {};
+    const [date, close] = row;
+    obj['date'] = date;
+    obj['close'] = close;
+    data.push(obj);
+  }
+  return data;
+};
+
 export const toCamelCase = (item) => {
   if (typeof item === 'undefined') {
     return item;
@@ -51,7 +63,7 @@ export const checkPositivity = (num) => {
   return check !== -1;
 };
 
-export const formatDate =  timeFormat('%b %d, \'%y');
+export const formatDate = timeFormat('%b %d, \'%y');
 
 export const getDate = (d) => new Date(d.date);
 
@@ -59,15 +71,15 @@ export const getStockValue = (d) => d.close;
 
 export const bisectDate = bisector(d => new Date(d.date)).left;
 
-export const getWindowDimensions =()=> {
-  const { innerWidth: width, innerHeight: height } = window;
+export const getWindowDimensions = () => {
+  const {innerWidth: width, innerHeight: height} = window;
   return {
     width,
     height
   };
 };
 
-export const dateFormat = (date, format='DD MMM, YYYY') => {
+export const dateFormat = (date, format = 'DD MMM, YYYY') => {
   return moment(date).format(format);
 };
 

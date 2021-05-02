@@ -19,7 +19,7 @@ export const StockScreen = ({name, onOpenCalendar, isOpen, ticker, start, end, o
       />
       <div className={styles.areaClose}>
         <AreaClose
-          stocks={stocks}
+          stock={stocks}
         />
       </div>
     </div>

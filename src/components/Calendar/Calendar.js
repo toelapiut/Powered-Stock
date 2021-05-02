@@ -5,9 +5,8 @@ import './calendar.css';
 import './selected.css';
 import styles from './calendar.module.css';
 
-export const Calendar = ({isOpen, onChangeDates, start, end}) => {
+export const Calendar = ({onChangeDates, start, end}) => {
 
-  console.log({isOpen});
   return (
     <div>
       <button className={ styles.container}>
@@ -25,7 +24,6 @@ export const Calendar = ({isOpen, onChangeDates, start, end}) => {
 
 
 Calendar.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
   onChangeDates: PropTypes.func.isRequired,
   start: PropTypes.object.isRequired,
   end: PropTypes.object.isRequired,
