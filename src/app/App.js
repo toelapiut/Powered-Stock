@@ -1,73 +1,68 @@
-// eslint-disable-next-line no-unused-vars
-import React, {useEffect, useState} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import React, {Fragment, useEffect, useState} from 'react';
 import Stock from '../containers/Stock';
 import Market from '../components/Market';
-import Header from '../components/Header';
-
-// import useSWR from 'swr';
-// import {url} from '../helper/url';
+import Brand from '../components/Brand';
+import useSWR from 'swr';
+import {url} from '../helper/url';
 import {quandl} from '../helper/http';
-// import Error from '../screens/Error';
+import Error from '../screens/Error';
 import {transpose, toCamelCase} from '../helper/utils';
 import styles from './styles.module.css';
-import dataset from '../data.json';
+import Loading from '../components/Loading';
 
-let columns = dataset.columns;
-let rows = dataset.data;
+const fetcher = url => quandl.get(url).then(res => res.data);
 
-let transposed = toCamelCase(transpose(rows, columns));
+export const App = () => {
+  const {data, error} = useSWR(`${url.markets}`, fetcher);
+  const [markets, setMarkets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState({ticker: 'AAPL'});
 
-// const fetcher = url => quandl.get(url).then(res => res.data);
-
-const App = () => {
-  console.log({quandl, url: process.env.REACT_APP_BASE_URL});
-  // const {data, error} = useSWR(`${url.markets}/ZACKS/CP?`, fetcher);
-  // eslint-disable-next-line no-unused-vars
-  const [markets, setMarkets] = useState(transposed);
-  const [active, setActive] = useState('AAPL');
-
-
-  // if (typeof error !== 'undefined')
-  //   return <Error/>;
-
-  // useEffect(() => {
-  //   if (typeof data !== 'undefined') {
-  //     let columns = data.datatable.columns;
-  //     let rows = data.datatable.data;
-  //     let transposedData = transpose(rows, columns);
-  //     setMarkets(toCamelCase(transposedData));
-  //   }
-  // }, [data]);
-
-  console.log({markets});
+  useEffect(() => {
+    if (typeof data !== 'undefined') {
+      const {datatable: {columns}} = data;
+      let rows = data.datatable.data;
+      let transposedData = toCamelCase(transpose(rows, columns));
+      setActive(transposedData[0]);
+      setMarkets(transposedData);
+      setLoading(false);
+    }
+  }, [data]);
 
   const onActivateMarket = (ticker) => {
     setActive(ticker);
   };
 
+  if (typeof error !== 'undefined')
+    return <Error/>;
+
+  if (loading)
+    return (
+      <div className={styles.loader}>
+        <Loading/>
+        <p className={styles.loading}>Initializing Markets ...</p>
+      </div>
+    );
+
   return (
-    <Router>
+    <Fragment>
       <div className={styles.container}>
         <div>
-          <Header/>
+          <Brand/>
           <div className={styles.sidebar}>
             <ul className={styles.unordered}>
-              {markets.map(({ticker, compName, compName2, zacksOperMarginQ0, totRevenueF0}) =>
-                <div className={`${styles.wrap} ${ticker === active ? styles.active : ''}`} key={ticker}>
+              {markets.map((market) =>
+                <div className={`${styles.wrap} ${market.ticker === active.ticker ? styles.active : ''}`}
+                  key={market.ticker}>
                   <li
                     className={`${styles.list}`}
-                    onClick={() => onActivateMarket(ticker)}>
+                    onClick={() => onActivateMarket(market)}>
                     <Market
-                      ticker={ticker}
-                      companyName={compName}
-                      fullCompanyName={compName2}
-                      openingMargin={zacksOperMarginQ0}
-                      totalRevenue={totRevenueF0}
+                      ticker={market.ticker}
+                      companyName={market.compName}
+                      fullCompanyName={market.compName2}
+                      openingMargin={market.zacksOperMarginQ0}
+                      totalRevenue={market.totRevenueF0}
                     />
                   </li>
                 </div>
@@ -76,18 +71,12 @@ const App = () => {
           </div>
         </div>
         <div>
-          <Switch>
-            <Route exact path="*">
-              <Stock
-                active={active}
-              />
-            </Route>
-          </Switch>
+          <Stock
+            active={active}
+          />
         </div>
       </div>
-    </Router>
+    </Fragment>
   );
 };
-
-export default App;
 

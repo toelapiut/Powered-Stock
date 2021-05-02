@@ -4,8 +4,15 @@
 }
 
 .sidebar{
-    @apply overflow-y-scroll;
+    @apply overflow-y-scroll ml-4;
     max-height: calc(100vh - 7em);
+}
+
+.loader{
+    @apply absolute inset-0 flex items-center justify-center flex-col
+}
+.loading{
+    @apply font-bold text-sm pt-3;
 }
 
 .unordered {

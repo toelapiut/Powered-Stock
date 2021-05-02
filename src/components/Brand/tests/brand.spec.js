@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../';
+import Brand from '../';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 const setUp = (props = {}) => {
-  return shallow(<Header {...props}/>);
+  return shallow(<Brand {...props}/>);
 };
 
-describe('Header Component', () => {
+describe('Brand Component', () => {
   let component;
   beforeAll(() => {
     let props = {

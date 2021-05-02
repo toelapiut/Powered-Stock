@@ -1,5 +1,6 @@
 export const url = {
-  markets: 'datatables'
+  markets: 'markets',
+  stocks: 'stocks/'
 };
 
 export const types = {

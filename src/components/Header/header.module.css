@@ -1,0 +1,14 @@
+.container {
+    @apply bg-koamaru pl-8 pr-4 py-4 rounded-lg mb-5 mt-6 flex flex-row items-center justify-between
+}
+.details{
+
+}
+
+.ticker{
+    @apply text-2xl font-black text-white leading-10
+}
+
+.name{
+    @apply text-sm font-bold text-liberty
+}

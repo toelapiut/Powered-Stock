@@ -1,0 +1,3 @@
+.container{
+    @apply bg-koamaru backdrop-filter backdrop-blur-2xl w-full z-10 flex items-center justify-center
+}
