@@ -9,19 +9,31 @@ let response = {
   stocks:[]
 };
 export const Stock = () => {
-  const { ticker, name, stocks, start, end} = response;
-  const [dates] = useState({start:start, end:end});
-  const onChangeDates = () => {
+  const { ticker, name, stocks} = response;
+  const [start, setStart] = useState(new Date());
+  const [end, setEnd] = useState(new Date());
+  const [isOpen, setIsOpen] = useState(true);
 
+  const onChangeDates = (dates) => {
+    console.log({dates});
+    setStart(dates.start);
+    setEnd(dates.end);
+    onOpenCalendar();
+  };
+
+  const onOpenCalendar = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
     <div>
       <StockScreen
+        isOpen={isOpen}
+        onOpenCalendar={onOpenCalendar}
         name={name}
         ticker={ticker}
-        start={dates.start}
-        end={dates.end}
+        start={start}
+        end={end}
         stocks={stocks}
         onChangeDates={onChangeDates}
       />

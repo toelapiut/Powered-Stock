@@ -2,6 +2,7 @@ import humps from 'humps';
 import checkPropTypes from 'check-prop-types';
 import {timeFormat} from 'd3-time-format';
 import {bisector} from 'd3-array';
+import moment from 'moment';
 
 export const transpose = (rows, cols) => {
   /*
@@ -64,6 +65,10 @@ export const getWindowDimensions =()=> {
     width,
     height
   };
+};
+
+export const dateFormat = (date, format='DD MMM, YYYY') => {
+  return moment(date).format(format);
 };
 
 export const findTestByAttr = (component, attr) => {

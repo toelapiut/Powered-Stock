@@ -6,7 +6,7 @@
 }
 
 .ticker{
-    @apply text-3xl font-black text-white leading-10
+    @apply text-2xl font-black text-white leading-10
 }
 
 .name{

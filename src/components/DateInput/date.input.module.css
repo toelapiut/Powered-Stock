@@ -1,13 +1,26 @@
 .container{
-    @apply flex flex-row  py-3 px-6 bg-navy rounded-lg
+    @apply relative;
 }
 
-.start{
+.wrap{
+    @apply flex flex-row  py-2 px-6 bg-navy rounded-lg cursor-pointer relative z-50
+}
 
+.wrap:focus{
+    @apply outline-none;
+}
+
+.overlay{
+    @apply fixed inset-0 z-10 cursor-pointer;
+    background:#02042f80;
+}
+
+.calendarContainer{
+    @apply relative
 }
 
 .start:nth-child(1){
-    @apply pr-10 mr-10 border-r border-koamaru border-dashed
+    @apply pr-6 mr-6 border-r border-koamaru border-dashed
 }
 
 .label{
@@ -16,4 +29,8 @@
 
 .date{
     @apply font-bold text-base text-white
+}
+
+.calendar{
+    @apply absolute z-10;
 }

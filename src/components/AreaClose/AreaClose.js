@@ -204,18 +204,18 @@ export const AreaClose = ({
 };
 
 AreaClose.propTypes = {
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
   margin: PropTypes.shape({
     top: PropTypes.number,
     right: PropTypes.number,
     bottom: PropTypes.number,
     left: PropTypes.number,
   }),
-  showTooltip: PropTypes.number.isRequired,
-  hideTooltip: PropTypes.number.isRequired,
-  tooltipData: PropTypes.number.isRequired,
-  tooltipTop: PropTypes.number.isRequired,
-  tooltipLeft: PropTypes.number.isRequired,
+  showTooltip: PropTypes.func,
+  hideTooltip: PropTypes.func,
+  tooltipData: PropTypes.object,
+  tooltipTop: PropTypes.number,
+  tooltipLeft: PropTypes.number,
 };
 
