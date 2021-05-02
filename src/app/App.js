@@ -16,7 +16,7 @@ export const App = () => {
   const {data, error} = useSWR(`${url.markets}`, fetcher);
   const [markets, setMarkets] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [active, setActive] = useState({ticker: 'AAPL'});
+  const [active, setActive] = useState({});
 
   useEffect(() => {
     if (typeof data !== 'undefined') {
