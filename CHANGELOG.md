@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/toelapiut/Powered-Stock/compare/v0.1.1...v0.1.4) (2021-05-02)
+
+
+### Bug Fixes
+
+* plugged in using api data rather than dummy data ([386307b](https://github.com/toelapiut/Powered-Stock/commit/386307bc289319d2a9c6687199f5d291c1f09efb))
+
 ### [0.1.3](https://github.com/toelapiut/Powered-Stock/compare/v0.1.1...v0.1.3) (2021-05-02)
 
 
