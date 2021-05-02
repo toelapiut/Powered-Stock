@@ -8,6 +8,13 @@
     max-height: calc(100vh - 7em);
 }
 
+.loader{
+    @apply absolute inset-0 flex items-center justify-center flex-col
+}
+.loading{
+    @apply font-bold text-sm pt-3;
+}
+
 .unordered {
     @apply pt-0
 }

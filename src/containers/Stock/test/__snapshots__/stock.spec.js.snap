@@ -3,10 +3,12 @@
 exports[`should render correctly 1`] = `
 <div>
   <StockScreen
-    end="29 April, 2003"
+    end={2021-05-02T02:06:27.633Z}
+    isOpen={true}
     name="Apple Inc (AAPL) Prices, Dividends, Splits and Trading Volume"
     onChangeDates={[Function]}
-    start="29 April, 1994"
+    onOpenCalendar={[Function]}
+    start={2021-05-02T02:06:27.633Z}
     stocks={Array []}
     ticker="AAPL"
   />
