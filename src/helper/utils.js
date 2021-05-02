@@ -63,7 +63,8 @@ export const checkPositivity = (num) => {
   return check !== -1;
 };
 
-export const formatDate = timeFormat('%b %d, \'%y');
+
+export const formatDate =  timeFormat('%b %d, \'%y');
 
 export const getDate = (d) => new Date(d.date);
 
@@ -71,8 +72,9 @@ export const getStockValue = (d) => d.close;
 
 export const bisectDate = bisector(d => new Date(d.date)).left;
 
-export const getWindowDimensions = () => {
-  const {innerWidth: width, innerHeight: height} = window;
+
+export const getWindowDimensions =()=> {
+  const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
     height

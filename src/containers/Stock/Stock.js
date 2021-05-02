@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react';
 import StockScreen from '../../screens/StockScreen';
 import useSWR from 'swr';
 import {url} from '../../helper/url';
-import {toCamelCase} from '../../helper/utils';
-import {transposeStock} from '../../helper/utils';
+import {toCamelCase, transposeStock, dateFormat} from '../../helper/utils';
 import {quandl} from '../../helper/http';
 import PropTypes from 'prop-types';
 import {Error} from '../../screens/Error/Error';
 import {Loading} from '../../components/Loading/Loading';
 
 const fetcher = url => quandl.post(url).then(res => res.data);
+const format = 'YYYY-MM-DD';
 
 export const Stock = ({ticker}) => {
   const {data, error} = useSWR(`${url.stocks}${ticker}`, fetcher);
@@ -41,10 +41,29 @@ export const Stock = ({ticker}) => {
     setLoading(true);
   }, [ticker]);
 
-  const onChangeDates = (dates) => {
+  const onChangeDates = async (dates) => {
     setStart(dates.start);
     setEnd(dates.end);
     onOpenCalendar();
+    await fetchByDate(dates.start, dates.end);
+    
+  };
+
+  const fetchByDate = async (startDate, endDate) => {
+    setLoading(true);
+
+    let response = await quandl.post(`${url.stocks}${ticker}`, {
+      start: dateFormat(startDate, format),
+      end: dateFormat(endDate, format)
+    });
+
+    let datasets = toCamelCase(response.data);
+    const {dataset} = datasets;
+    const {datasetCode, name} = dataset;
+    setDetails({ticker: datasetCode, name});
+    const transposed = transposeStock(dataset.data);
+    setStocks(transposed);
+    setLoading(false);
   };
 
   const onOpenCalendar = () => {
