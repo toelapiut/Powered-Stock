@@ -1,6 +1,5 @@
 import React, {useMemo, useCallback} from 'react';
 import {AreaClosed, Line, Bar} from '@visx/shape';
-import appleStock from '@visx/mock-data/lib/mocks/appleStock';
 import {curveMonotoneX} from '@visx/curve';
 import {GridRows, GridColumns} from '@visx/grid';
 import {scaleTime, scaleLinear} from '@visx/scale';
@@ -12,7 +11,6 @@ import {formatDate, getDate, getStockValue, bisectDate} from '../../helper/utils
 import PropTypes from 'prop-types';
 
 
-const stock = appleStock.slice(120);
 export const background = '#222352';
 export const background2 = '#222352';
 export const accentColor = '#edffea';
@@ -22,8 +20,6 @@ import {getWindowDimensions} from '../../helper/utils';
 
 let dimensions = getWindowDimensions();
 
-console.log({dimensions});
-
 const tooltipStyles = {
   ...defaultStyles,
   background,
@@ -32,6 +28,7 @@ const tooltipStyles = {
 };
 
 export const AreaClose = ({
+  stock,
   width = dimensions.width - 470,
   height = dimensions.height- 190,
   margin = {top: 0, right: 0, bottom: 0, left: 0},
@@ -41,6 +38,8 @@ export const AreaClose = ({
   tooltipTop = 0,
   tooltipLeft = 0,
 }) => {
+
+
   if (width < 10) return null;
 
   // bounds
@@ -206,6 +205,12 @@ export const AreaClose = ({
 AreaClose.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
+  stock: PropTypes.arrayOf(
+    PropTypes.shape({
+      date:PropTypes.string,
+      close:PropTypes.number,
+    })
+  ),
   margin: PropTypes.shape({
     top: PropTypes.number,
     right: PropTypes.number,
