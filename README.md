@@ -2,10 +2,10 @@
 ###
 
 ## Stocks By People
-#### [Live Stock by People Demo ](https://powered-stocks.netlify.app/)
+#### [Live Stock by People  Demo ](https://powered-stocks.netlify.app/)
  
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/toelapiut/cinema/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/toelapiut/Powered-Stock/blob/develop/LICENSE)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/toelapiut)
 ![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)
 
@@ -27,7 +27,7 @@ package-manager(yarn or npm)
 
 After creating the Prerequisites ready to clone the project
 
-First, clone cinema project using http and ssh respectively
+First, clone powered project using http and ssh respectively
 
 ```
 $ git clone git@github.com:toelapiut/Powered-Stock.git powered
@@ -36,6 +36,16 @@ $ git clone https://github.com/toelapiut/Powered-Stock.git powered
 
 Then enter into the powered directory and install the packages using your favourite package-manager ```yarn``` or 
 ```npm``` whichever you are comfortable in.
+
+### Running code locally:
+For you to successfully run your code locally you'll need to have an .env file at the root directory with the following variables:
+```dotenv
+REACT_APP_BASE_URL=https://powered-market.herokuapp.com/api/v1/quandl/ #just for testing purposes 
+SKIP_PREFLIGHT_CHECK=true
+REACT_APP_VERSION=$npm_package_version
+REACT_APP_NAME=$npm_package_name
+```
+
 After which you can run the command 
 
 ```
@@ -51,6 +61,19 @@ $ npm run start
 $ npm run test:watch
 $ npm run test:coverage
 ```
+
+## Challenge
+ During development of the application, I encountered a couple of errors that I managed to fix. However, one error that 
+ that stood out for me was the CORS error from quandl API. After hours and hours of research I finally found out that the 
+ error was with Quandl API. Quandl doesnt allow Cross Origin resource sharing  as stated [**here**](https://help.quandl.com/article/368-are-cross-origin-requests-allowed).
+ The only way around that CORS error was to build a backend to wrap Quandl API and serve my front-end with that data.
+ Here is the link to my [**Powered Backend**](https://github.com/toelapiut/powered-backend)
+ 
+ ***FAQ response from Quandle regarding CORS***
+ 
+![](./src/assets/images/screenshots/error.png)
+
+**NOTE:** Keep that in mind
 ## Built With:
 
 * [Reactjs](https://reactjs.org/) - React makes it painless to create interactive UIs
