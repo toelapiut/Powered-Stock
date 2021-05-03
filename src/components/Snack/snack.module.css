@@ -1,0 +1,9 @@
+.container{
+    max-width:50em;
+    width: auto;
+    @apply bg-white py-3 px-8 rounded flex justify-center items-center mb-5;
+}
+
+.message {
+    @apply font-bold text-sm text-koamaru
+}

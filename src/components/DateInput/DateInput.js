@@ -4,7 +4,7 @@ import styles from './date.input.module.css';
 import {Calendar} from '../Calendar/Calendar';
 import {dateFormat} from '../../helper/utils';
 
-export const DateInput = ({start, end, onOpenCalendar, isOpen, onChangeDates}) => {
+export const DateInput = ({date, start, end, onOpenCalendar, isOpen, onChangeDates}) => {
   return (
     <div className={styles.container}>
       <button className={styles.wrap} onClick={onOpenCalendar}>
@@ -17,17 +17,33 @@ export const DateInput = ({start, end, onOpenCalendar, isOpen, onChangeDates}) =
           <p className={styles.date}>{dateFormat(end)}</p>
         </div>
       </button>
-      { !isOpen && <div className={styles.overlay} onClick={onOpenCalendar}/> }
-      { !isOpen &&<div className={styles.calendar}>
-        <Calendar isOpen={isOpen} onChangeDates={onChangeDates} end={end} start={start}/>
+      {!isOpen && <div className={styles.overlay} onClick={onOpenCalendar}/>}
+      {!isOpen && <div className={styles.calendar}>
+        <Calendar
+          date={date}
+          isOpen={isOpen}
+          onChangeDates={onChangeDates}
+          end={end}
+          start={start}
+        />
       </div>}
     </div>
   );
 };
 
 DateInput.propTypes = {
-  start: PropTypes.object,
-  end: PropTypes.object,
+  date: PropTypes.shape({
+    start: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]),
+    end: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ])
+  }),
+  start: PropTypes.string,
+  end: PropTypes.string,
   isOpen: PropTypes.bool.isRequired,
   onOpenCalendar: PropTypes.func.isRequired,
   onChangeDates: PropTypes.func.isRequired

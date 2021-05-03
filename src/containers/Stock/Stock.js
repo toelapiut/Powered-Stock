@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import StockScreen from '../../screens/StockScreen';
 import useSWR from 'swr';
 import {url} from '../../helper/url';
-import {toCamelCase, transposeStock, dateFormat} from '../../helper/utils';
+import {dateDiff, dateFormat, toCamelCase, transposeStock} from '../../helper/utils';
 import {quandl} from '../../helper/http';
 import PropTypes from 'prop-types';
-import {Error} from '../../screens/Error/Error';
-import {Loading} from '../../components/Loading/Loading';
+import Snack from '../../components/Snack';
+
 
 const fetcher = url => quandl.post(url).then(res => res.data);
 const format = 'YYYY-MM-DD';
-
-export const Stock = ({ticker}) => {
+const now = dateFormat(new Date());
+export const Stock = ({ticker, toastManager}) => {
   const {data, error} = useSWR(`${url.stocks}${ticker}`, fetcher);
-  const [start, setStart] = useState(new Date());
-  const [end, setEnd] = useState(new Date());
+  const [start, setStart] = useState(now);
+  const [end, setEnd] = useState(now);
+  const [date, setDate] = useState({start: now, end: now});
   const [isOpen, setIsOpen] = useState(true);
   const [stocks, setStocks] = useState([]);
   const [details, setDetails] = useState({ticker, name: ''});
@@ -25,7 +26,10 @@ export const Stock = ({ticker}) => {
     if (typeof data !== 'undefined') {
       const datasets = toCamelCase(data);
       const {dataset} = datasets;
-      const {datasetCode, name} = dataset;
+      const {datasetCode, name, endDate, startDate} = dataset;
+      setStart(startDate);
+      setEnd(endDate);
+      setDate({start: startDate, end: endDate});
       setDetails({ticker: datasetCode, name});
       const transposed = transposeStock(dataset.data);
       setStocks(transposed);
@@ -42,11 +46,13 @@ export const Stock = ({ticker}) => {
   }, [ticker]);
 
   const onChangeDates = async (dates) => {
+    let diff = dateDiff(dates.end, dates.start);
+    if (!diff) return toaster();
     setStart(dates.start);
     setEnd(dates.end);
     onOpenCalendar();
     await fetchByDate(dates.start, dates.end);
-    
+
   };
 
   const fetchByDate = async (startDate, endDate) => {
@@ -70,20 +76,22 @@ export const Stock = ({ticker}) => {
     setIsOpen(!isOpen);
   };
 
-  if (typeof error !== 'undefined') {
-    return <Error/>;
-  }
 
-  if (loading) {
-    return (
-      <div>
-        <Loading/>
-      </div>
-    );
-  }
+  const toaster = () => {
+    toastManager.add(Snack, {
+      appearance: 'error',
+      message: 'You need to select more than two months for a proper graph',
+      autoDismiss: true,
+    });
+  };
+
+
   return (
     <div>
       <StockScreen
+        error={error}
+        loading={loading}
+        date={date}
         isOpen={isOpen}
         onOpenCalendar={onOpenCalendar}
         name={details.name}
@@ -98,5 +106,6 @@ export const Stock = ({ticker}) => {
 };
 
 Stock.propTypes = {
-  ticker: PropTypes.string
+  ticker: PropTypes.string,
+  toastManager: PropTypes.object,
 };

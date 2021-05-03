@@ -39,12 +39,12 @@ export const AreaClose = ({
   tooltipLeft = 0,
 }) => {
 
-
   if (width < 10) return null;
 
   // bounds
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
+
   // scales
   const dateScale = useMemo(
     () =>
