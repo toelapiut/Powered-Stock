@@ -2,6 +2,10 @@
     @apply mx-6
 }
 
-.areaClose {
+.areaClose, .loader {
     @apply bg-koamaru p-3 rounded-lg my-6
+}
+
+.loader{
+    @apply flex justify-center items-center mx-6 mt-28
 }
