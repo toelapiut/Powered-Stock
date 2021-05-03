@@ -11,6 +11,7 @@ import Snack from '../../components/Snack';
 const fetcher = url => quandl.post(url).then(res => res.data);
 const format = 'YYYY-MM-DD';
 const now = dateFormat(new Date());
+
 export const Stock = ({ticker, toastManager}) => {
   const {data, error} = useSWR(`${url.stocks}${ticker}`, fetcher);
   const [start, setStart] = useState(now);
@@ -47,28 +48,34 @@ export const Stock = ({ticker, toastManager}) => {
 
   const onChangeDates = async (dates) => {
     let diff = dateDiff(dates.end, dates.start);
-    if (!diff) return toaster();
+    if (!diff) return toaster('You need to select more than two months for a proper graph');
     setStart(dates.start);
     setEnd(dates.end);
     onOpenCalendar();
-    await fetchByDate(dates.start, dates.end);
 
+    try {
+      await fetchByDate(dates.start, dates.end);
+    } catch (err) {
+      toaster('Error occurred while setting dates');
+    }
   };
 
   const fetchByDate = async (startDate, endDate) => {
     setLoading(true);
-
-    let response = await quandl.post(`${url.stocks}${ticker}`, {
-      start: dateFormat(startDate, format),
-      end: dateFormat(endDate, format)
-    });
-
-    let datasets = toCamelCase(response.data);
-    const {dataset} = datasets;
-    const {datasetCode, name} = dataset;
-    setDetails({ticker: datasetCode, name});
-    const transposed = transposeStock(dataset.data);
-    setStocks(transposed);
+    try {
+      let response = await quandl.post(`${url.stocks}${ticker}`, {
+        start: dateFormat(startDate, format),
+        end: dateFormat(endDate, format)
+      });
+      let datasets = toCamelCase(response.data);
+      const {dataset} = datasets;
+      const {datasetCode, name} = dataset;
+      setDetails({ticker: datasetCode, name});
+      const transposed = transposeStock(dataset.data);
+      setStocks(transposed);
+    } catch (err) {
+      toaster('Error filtering the start dates and end dates, Try again later');
+    }
     setLoading(false);
   };
 
@@ -76,32 +83,28 @@ export const Stock = ({ticker, toastManager}) => {
     setIsOpen(!isOpen);
   };
 
-
-  const toaster = () => {
+  const toaster = (message) => {
     toastManager.add(Snack, {
       appearance: 'error',
-      message: 'You need to select more than two months for a proper graph',
+      message: message,
       autoDismiss: true,
     });
   };
 
-
   return (
-    <div>
-      <StockScreen
-        error={error}
-        loading={loading}
-        date={date}
-        isOpen={isOpen}
-        onOpenCalendar={onOpenCalendar}
-        name={details.name}
-        ticker={details.ticker}
-        start={start}
-        end={end}
-        stocks={stocks}
-        onChangeDates={onChangeDates}
-      />
-    </div>
+    <StockScreen
+      error={error}
+      loading={loading}
+      date={date}
+      isOpen={isOpen}
+      onOpenCalendar={onOpenCalendar}
+      name={details.name}
+      ticker={details.ticker}
+      start={start}
+      end={end}
+      stocks={stocks}
+      onChangeDates={onChangeDates}
+    />
   );
 };
 

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Component Component renders tests should render snapshot correctly 1`] = `
+<div
+  className="container"
+  data-test="loading-container"
+>
+  <Wrapper
+    color="rgba(103, 57, 172, 1)"
+    enabled={true}
+    secondaryColor="rgba(0, 0, 0, 0.44)"
+    size={50}
+    speed={99}
+    style={Object {}}
+    thickness={51}
+  />
+</div>
+`;

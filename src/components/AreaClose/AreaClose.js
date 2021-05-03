@@ -89,7 +89,7 @@ export const AreaClose = ({
   );
 
   return (
-    <div>
+    <div data-test={'area-close-container'}>
       <svg width={width} height={height}>
         <rect
           x={0}
@@ -175,7 +175,7 @@ export const AreaClose = ({
         )}
       </svg>
       {tooltipData && (
-        <div>
+        <div data-test={'toggle-tool-tip'}>
           <TooltipWithBounds
             key={Math.random()}
             top={tooltipTop - 12}

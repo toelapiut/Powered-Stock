@@ -8,7 +8,7 @@ import styles from './calendar.module.css';
 export const Calendar = ({onChangeDates, date, start, end}) => {
 
   return (
-    <div>
+    <div data-test={'calendar-container'}>
       <button className={ styles.container}>
         <SimpleReactCalendar
           today={date.end}
@@ -38,7 +38,13 @@ Calendar.propTypes = {
     ])
   }),
   onChangeDates: PropTypes.func.isRequired,
-  start: PropTypes.object.isRequired,
-  end: PropTypes.object.isRequired,
+  start:PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  end: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ])
 };
 

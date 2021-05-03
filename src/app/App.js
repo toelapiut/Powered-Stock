@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Stock from '../containers/Stock';
 import Market from '../components/Market';
 import Brand from '../components/Brand';
@@ -35,28 +35,30 @@ export const App = () => {
     setActive(ticker);
   };
 
-  if (typeof error !== 'undefined')
+  if (typeof error !== 'undefined') {
     return <Error/>;
+  }
 
-  if (loading)
+  if (loading) {
     return (
-      <div className={styles.loader}>
+      <div className={styles.loader} >
         <div className={styles.wrapper}>
           <Loading/>
           <p className={styles.loading}>Initializing Markets ...</p>
         </div>
       </div>
     );
+  }
 
   return (
-    <Fragment>
+    <section data-test={'app-container'}>
       <ToastProvider
         autoDismiss
         autoDismissTimeout={6000}
         components={{Toast: Snack}}
         placement="bottom-center"
       >
-        <div className={styles.container}>
+        <div className={styles.container} >
           <div>
             <Brand/>
             <div className={styles.sidebar}>
@@ -87,7 +89,7 @@ export const App = () => {
           </div>
         </div>
       </ToastProvider>
-    </Fragment>
+    </section>
   );
 };
 
