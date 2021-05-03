@@ -2,6 +2,7 @@
 ###
 
 ## Stocks By People
+
 #### [Live Stock by People  Demo ](https://powered-stocks.netlify.app/)
  
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
@@ -27,7 +28,7 @@ package-manager(yarn or npm)
 
 After creating the Prerequisites ready to clone the project
 
-First, clone powered project using http and ssh respectively
+First, clone cinema project using http and ssh respectively
 
 ```
 $ git clone git@github.com:toelapiut/Powered-Stock.git powered
@@ -103,5 +104,49 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) f
 * Airbnb for VISX
 * Hat tip to anyone whose code was used
 
+
+=======
+After which you can run the command 
+
+```
+$ yarn start
+$ yarn test:watch
+$ yarn test:coverage
+```
+
+or 
+
+```
+$ npm run start
+$ npm run test:watch
+$ npm run test:coverage
+```
+## Built With:
+
+* [Reactjs](https://reactjs.org/) - React makes it painless to create interactive UIs
+* [SWR](https://swr.vercel.app/) -SWR  is tool to help you optimise and simplify the logic of data fetching in your project
+* [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+* [VISX](https://airbnb.io/visx) - visx a collection of expressive, low-level visualization primitives for React
+* [Enzyme](https://enzymejs.github.io/enzyme/) -Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output.
+* [Yarn](https://yarnpkg.com/) - Yarn is a package manager that doubles down as project manager. 
+
+## Contributing
+
+Please read CONTRIBUTING for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+* **[Apiut Toel](https://github.com/toelapiut)**
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+
+## Acknowledgments
+
+* Apple Stock
+* Airbnb for VISX
+* Hat tip to anyone whose code was used
 
 ![forthebadge made-with-javascript](http://ForTheBadge.com/images/badges/made-with-javascript.svg)
