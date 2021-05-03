@@ -9,6 +9,8 @@ import Error from '../screens/Error';
 import {transpose, toCamelCase} from '../helper/utils';
 import styles from './styles.module.css';
 import Loading from '../components/Loading';
+import {ToastProvider} from 'react-toast-notifications';
+import Snack from '../components/Snack';
 
 const fetcher = url => quandl.get(url).then(res => res.data);
 
@@ -16,7 +18,7 @@ export const App = () => {
   const {data, error} = useSWR(`${url.markets}`, fetcher);
   const [markets, setMarkets] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [active, setActive] = useState({ticker: 'AAPL'});
+  const [active, setActive] = useState({});
 
   useEffect(() => {
     if (typeof data !== 'undefined') {
@@ -39,43 +41,52 @@ export const App = () => {
   if (loading)
     return (
       <div className={styles.loader}>
-        <Loading/>
-        <p className={styles.loading}>Initializing Markets ...</p>
+        <div className={styles.wrapper}>
+          <Loading/>
+          <p className={styles.loading}>Initializing Markets ...</p>
+        </div>
       </div>
     );
 
   return (
     <Fragment>
-      <div className={styles.container}>
-        <div>
-          <Brand/>
-          <div className={styles.sidebar}>
-            <ul className={styles.unordered}>
-              {markets.map((market) =>
-                <div className={`${styles.wrap} ${market.ticker === active.ticker ? styles.active : ''}`}
-                  key={market.ticker}>
-                  <li
-                    className={`${styles.list}`}
-                    onClick={() => onActivateMarket(market)}>
-                    <Market
-                      ticker={market.ticker}
-                      companyName={market.compName}
-                      fullCompanyName={market.compName2}
-                      openingMargin={market.zacksOperMarginQ0}
-                      totalRevenue={market.totRevenueF0}
-                    />
-                  </li>
-                </div>
-              )}
-            </ul>
+      <ToastProvider
+        autoDismiss
+        autoDismissTimeout={6000}
+        components={{Toast: Snack}}
+        placement="bottom-center"
+      >
+        <div className={styles.container}>
+          <div>
+            <Brand/>
+            <div className={styles.sidebar}>
+              <ul className={styles.unordered}>
+                {markets.map((market) =>
+                  <div className={`${styles.wrap} ${market.ticker === active.ticker ? styles.active : ''}`}
+                    key={market.ticker}>
+                    <li
+                      className={`${styles.list}`}
+                      onClick={() => onActivateMarket(market)}>
+                      <Market
+                        ticker={market.ticker}
+                        companyName={market.compName}
+                        fullCompanyName={market.compName2}
+                        openingMargin={market.zacksOperMarginQ0}
+                        totalRevenue={market.totRevenueF0}
+                      />
+                    </li>
+                  </div>
+                )}
+              </ul>
+            </div>
+          </div>
+          <div>
+            <Stock
+              ticker={active.ticker}
+            />
           </div>
         </div>
-        <div>
-          <Stock
-            ticker={active.ticker}
-          />
-        </div>
-      </div>
+      </ToastProvider>
     </Fragment>
   );
 };

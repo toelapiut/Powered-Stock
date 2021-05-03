@@ -1,25 +1,30 @@
-.container{
+.container {
     max-height: 100vh;
     @apply overflow-hidden flex flex-row;
 }
 
-.sidebar{
+.sidebar {
     @apply overflow-y-scroll ml-4;
-    max-height: calc(100vh - 7em);
+    max-height: calc(100vh - 9em);
 }
 
-.loader{
+.loader {
     @apply absolute inset-0 flex items-center justify-center flex-col
 }
-.loading{
+
+.loading {
     @apply font-bold text-sm pt-3;
+}
+
+.wrapper {
+    @apply bg-koamaru p-5 rounded-lg my-6 flex items-center justify-center flex-col
 }
 
 .unordered {
     @apply pt-0
 }
 
-.wrap{
+.wrap {
     @apply mx-0
 }
 
@@ -28,6 +33,6 @@
     width: 22em;
 }
 
-.active{
+.active {
     @apply bg-koamaru rounded-lg
 }

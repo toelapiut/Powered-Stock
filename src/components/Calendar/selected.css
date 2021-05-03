@@ -35,7 +35,7 @@
     outline: 0;
 }
 .date_picker-header_button.is-disabled {
-    cursor: default;
+    cursor: not-allowed;
 }
 .date_picker-header_button.is-next:before,
 .date_picker-header_button.is-prev:before {
@@ -44,7 +44,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: fill 0.1s ease-in;
-    color: #303030;
+    color: #ffffff;
 }
 .date_picker-header_button.is-disabled .date_picker-header_button.is-next,
 .date_picker-header_button.is-disabled .date_picker-header_button.is-prev {

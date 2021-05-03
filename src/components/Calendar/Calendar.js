@@ -5,12 +5,15 @@ import './calendar.css';
 import './selected.css';
 import styles from './calendar.module.css';
 
-export const Calendar = ({onChangeDates, start, end}) => {
+export const Calendar = ({onChangeDates, date, start, end}) => {
 
   return (
     <div>
       <button className={ styles.container}>
         <SimpleReactCalendar
+          today={date.end}
+          maxDate={date.end}
+          minDate={date.start}
           mode='range'
           minNumberOfWeeks={6}
           blockClassName='date_picker'
@@ -24,6 +27,16 @@ export const Calendar = ({onChangeDates, start, end}) => {
 
 
 Calendar.propTypes = {
+  date: PropTypes.shape({
+    start: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]),
+    end: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ])
+  }),
   onChangeDates: PropTypes.func.isRequired,
   start: PropTypes.object.isRequired,
   end: PropTypes.object.isRequired,
