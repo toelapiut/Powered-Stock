@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockScreen Component StockScreen renders tests should render snapshot correctly 1`] = `
+<div
+  className="container"
+  data-test="stock-screen-container"
+>
+  <Header
+    date={
+      Object {
+        "end": "01-04-2020",
+        "start": "01-04-2020",
+      }
+    }
+    end="01-04-2020"
+    isOpen={false}
+    name="Powered By People Inc"
+    onChangeDates={[Function]}
+    onOpenCalendar={[Function]}
+    start="01-04-2020"
+    ticker="PBP"
+  />
+  <div
+    className="areaClose"
+  >
+    <div
+      data-test="area-close-container"
+    >
+      <WrappedComponent
+        stock={
+          Array [
+            Object {
+              "close": 34.13,
+              "date": "1980-12-31",
+            },
+            Object {
+              "close": 28.25,
+              "date": "1981-01-31",
+            },
+            Object {
+              "close": 168.34,
+              "date": "2018-03-31",
+            },
+          ]
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

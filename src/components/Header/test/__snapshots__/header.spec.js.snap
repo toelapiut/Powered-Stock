@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Component renders tests should render snapshot correctly 1`] = `
+<div
+  className="container"
+  data-test="header-container"
+>
+  <div>
+    <h1
+      className="ticker"
+    >
+      PBP
+    </h1>
+    <p
+      className="name"
+    >
+      Powered By People Inc
+    </p>
+  </div>
+  <DateInput
+    date={
+      Object {
+        "end": "01-04-2020",
+        "start": "01-04-2020",
+      }
+    }
+    end="01-04-2020"
+    isOpen={false}
+    onChangeDates={[Function]}
+    onOpenCalendar={[Function]}
+    start="01-04-2020"
+  />
+</div>
+`;

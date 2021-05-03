@@ -3,7 +3,6 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
-    screens: {},
     colors: {
       navy: '#02042F',
       koamaru: '#222352',

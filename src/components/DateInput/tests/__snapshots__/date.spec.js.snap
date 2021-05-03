@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateInput Component Component date inputs renders tests should render snapshot correctly 1`] = `
+<div
+  className="container"
+  data-test="date-input-container"
+>
+  <button
+    className="wrap"
+    onClick={[Function]}
+  >
+    <div
+      className="start"
+    >
+      <p
+        className="label"
+      >
+        Start date
+      </p>
+      <p
+        className="date"
+      >
+        04 Jan, 2020
+      </p>
+    </div>
+    <div
+      className="start"
+    >
+      <p
+        className="label"
+      >
+        End date
+      </p>
+      <p
+        className="date"
+      >
+        04 Jan, 2020
+      </p>
+    </div>
+  </button>
+  <div
+    data-test="toggle-calendar"
+  >
+    <div
+      className="overlay"
+      onClick={[Function]}
+    />
+    <div
+      className="calendar"
+    >
+      <Calendar
+        date={
+          Object {
+            "end": "01-04-2020",
+            "start": "01-04-2020",
+          }
+        }
+        end="01-04-2020"
+        isOpen={false}
+        onChangeDates={[Function]}
+        start="01-04-2020"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AreaClose Component AreaClose renders tests should render snapshot correctly 1`] = `
+<div
+  style={
+    Object {
+      "height": "inherit",
+      "position": "relative",
+      "width": "inherit",
+    }
+  }
+>
+  <AreaClose
+    height={710}
+    hideTooltip={[Function]}
+    margin={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+      }
+    }
+    showTooltip={[Function]}
+    stock={
+      Array [
+        Object {
+          "close": 34.13,
+          "date": "1980-12-31",
+        },
+        Object {
+          "close": 28.25,
+          "date": "1981-01-31",
+        },
+        Object {
+          "close": 168.34,
+          "date": "2018-03-31",
+        },
+      ]
+    }
+    tooltipLeft={0}
+    tooltipOpen={false}
+    tooltipTop={0}
+    updateTooltip={[Function]}
+    width={970}
+  />
+</div>
+`;

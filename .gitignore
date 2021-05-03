@@ -24,4 +24,4 @@ yarn-error.log*
 .idea/
  yarn.lock
 
-src/data.json
+src/data.json.env

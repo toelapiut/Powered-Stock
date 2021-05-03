@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Component renders tests should render snapshot correctly 1`] = `
+<div
+  className="loader"
+>
+  <div
+    className="wrapper"
+  >
+    <Loading
+      color="rgba(103, 57, 172, 1)"
+      secondaryColor="rgba(0, 0, 0, 0.44)"
+      size={50}
+      speed={99}
+      thickness={51}
+    />
+    <p
+      className="loading"
+    >
+      Initializing Markets ...
+    </p>
+  </div>
+</div>
+`;

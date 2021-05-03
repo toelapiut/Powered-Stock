@@ -1,16 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-<div>
-  <StockScreen
-    end={2021-05-02T02:06:27.633Z}
-    isOpen={true}
-    name="Apple Inc (AAPL) Prices, Dividends, Splits and Trading Volume"
-    onChangeDates={[Function]}
-    onOpenCalendar={[Function]}
-    start={2021-05-02T02:06:27.633Z}
-    stocks={Array []}
-    ticker="AAPL"
-  />
-</div>
+<StockScreen
+  date={
+    Object {
+      "end": "03 May, 2021",
+      "start": "03 May, 2021",
+    }
+  }
+  end="03 May, 2021"
+  isOpen={true}
+  loading={true}
+  name=""
+  onChangeDates={[Function]}
+  onOpenCalendar={[Function]}
+  start="03 May, 2021"
+  stocks={Array []}
+  ticker="ticker"
+/>
 `;

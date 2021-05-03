@@ -9,21 +9,25 @@
     flex-direction: column;
     flex-basis: 310px;
     max-width: 310px;
-    width:310px;
+    width: 310px;
 }
+
 .date_picker-month_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
+
 .date_picker-month_header_wrapper {
     text-align: center;
     margin: 0 auto 25px;
 }
+
 .date_picker-month_header_title {
     @apply text-base font-black
 }
+
 .date_picker-header_button {
     @apply cursor-pointer rounded-full border border-koamaru;
     transition: border 0.1s ease-in, color 0.1s ease-in;
@@ -31,12 +35,15 @@
     height: 35px;
     width: 35px;
 }
+
 .date_picker-header_button:focus {
     outline: 0;
 }
+
 .date_picker-header_button.is-disabled {
     cursor: not-allowed;
 }
+
 .date_picker-header_button.is-next:before,
 .date_picker-header_button.is-prev:before {
     position: absolute;
@@ -46,21 +53,26 @@
     transition: fill 0.1s ease-in;
     color: #ffffff;
 }
+
 .date_picker-header_button.is-disabled .date_picker-header_button.is-next,
 .date_picker-header_button.is-disabled .date_picker-header_button.is-prev {
     color: #acb3bb;
 }
+
 .date_picker-calendar_wrapper.is-shortcut_hover_outrange .date_picker-header_button.is-next,
 .date_picker-calendar_wrapper.is-shortcut_hover_outrange .date_picker-header_button.is-prev {
     border-color: #4a90e2;
     background: #e7f5ff;
 }
+
 .date_picker-header_button.is-prev:before {
     content: '<';
 }
+
 .date_picker-header_button.is-next:after {
     content: '>';
 }
+
 .date_picker-days_of_week {
     font-size: 13px;
     display: flex;
@@ -68,9 +80,11 @@
     text-align: center;
     margin-bottom: 25px;
 }
+
 .date_picker-days_of_week_day {
     flex-basis: 15%;
 }
+
 .date_picker-week {
     display: flex;
     margin-bottom: 8px;
@@ -97,70 +111,88 @@
     border: none;
     outline: 0;
 }
+
 .date_picker-week-day:first-of-type:hover,
 .date_picker-week-day:last-of-type:hover {
     border-radius: 50%;
 }
+
 .date_picker-week-day:first-of-type {
     border-radius: 50% 0 0 50%;
 }
+
 .date_picker-week-day:last-of-type {
     border-radius: 0 50% 50% 0;
 }
+
 .date_picker-week-day.is-prev_month,
 .date_picker-week-day.is-next_month {
     @apply text-koamaru
 }
+
 .date_picker-week-day.is-today {
     font-weight: 700;
 }
+
 .date_picker-week-day.is-selected {
     @apply bg-koamaru font-bold text-white relative;
     z-index: 1;
     border-radius: 0;
 }
+
 .date_picker-week-day.is-selected:first-of-type {
     border-radius: 50% 0 0 50%;
 }
+
 .date_picker-week-day.is-selected:last-of-type {
     border-radius: 0 50% 50% 0;
 }
+
 .date_picker-week-day.is-selected::before {
     @apply bg-white rounded-full absolute text-white;
     width: 30px;
     height: 30px;
     z-index: -1;
 }
+
 .date_picker-calendar_wrapper.is-shortcut_hovered .date_picker-week-day.is-selected::before {
     background: #4a90e2;
 }
+
 .date_picker-week-day.is-selected:hover::before {
     content: '';
     box-shadow: inset 0 0 1px 0 #3863a0;
     background: #e3effc;
     color: #404040;
 }
+
 .date_picker-week-day.is-selected.is-start_selection.date_picker-week-day.is-selected:hover::before,
 .date_picker-week-day.is-selected.is-end_selection.date_picker-week-day.is-selected:hover::before {
-   @apply bg-white;
+    @apply bg-white;
 }
+
 .date_picker-week-day.is-selected.is-start_selection,
 .date_picker-week-day.is-selected.is-end_selection {
     @apply text-navy font-bold;
 }
+
 .date_picker-week-day.is-selected.is-start_selection::before,
 .date_picker-week-day.is-selected.is-end_selection::before {
     content: '';
 }
+
 .date_picker-week-day.is-selected.is-start_selection {
     border-radius: 50% 0 0 50%;
 }
+
 .date_picker-week-day.is-selected.is-start_selection:last-of-type {
     border-radius: 50%;
 }
+
 .date_picker-week-day.is-selected.is-end_selection {
     border-radius: 0 50% 50% 0;
 }
+
 .date_picker-week-day.is-selected.is-end_selection.is-start_selection,
 .date_picker-week-day.is-selected.is-end_selection:first-of-type {
     @apply rounded-full;
@@ -170,10 +202,12 @@
 .date_picker-week-day.is-selected.is-end_selection:focus {
     @apply outline-none;
 }
+
 .date_picker-week-day.is-selectable {
     cursor: pointer;
     position: relative;
 }
+
 /*.date_picker-week-day.is-selectable:before {*/
 /*    top: 0;*/
 /*    left: 0;*/
@@ -188,10 +222,12 @@
     z-index: 1;
     box-shadow: inset 0 0 1px 0 #3863a0;
 }
+
 .date_picker-week-day.is-not_selectable {
     color: #073058;
     cursor: not-allowed;
 }
+
 .date_picker-notice {
     font-size: 11px;
     font-weight: 700;

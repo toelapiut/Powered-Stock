@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Component calendar renders tests should render snapshot correctly 1`] = `
+<div
+  data-test="calendar-container"
+>
+  <button
+    className="container"
+  >
+    <Calendar
+      blockClassName="date_picker"
+      daysOfWeek={
+        Array [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+        ]
+      }
+      disableDaysOfWeek={false}
+      getDayFormatted={[Function]}
+      getISODate={[Function]}
+      getNoticeContent={[Function]}
+      headerNextTitle="Next month"
+      headerPrevTitle="Previous month"
+      maxDate="01-04-2020"
+      minDate="01-04-2020"
+      minNumberOfWeeks={6}
+      mode="range"
+      onSelect={[Function]}
+      renderDay={[Function]}
+      renderDayOfWeek={[Function]}
+      renderNotice={[Function]}
+      selected={
+        Object {
+          "end": "01-04-2020",
+          "start": "01-04-2020",
+        }
+      }
+      today="01-04-2020"
+      weekStartsOn={1}
+    />
+  </button>
+</div>
+`;
