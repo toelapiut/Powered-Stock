@@ -1,4 +1,5 @@
-import {transpose, toCamelCase, checkPositivity} from '../utils';
+import {transpose, toCamelCase, checkPositivity, dateDiff, dateFormat, transposeStock} from '../utils';
+import moment from 'moment';
 
 describe('Helper functions', () => {
   describe('transpose function', () => {
@@ -83,6 +84,53 @@ describe('Helper functions', () => {
     it('should return false if the number is a negative integer', () => {
       let func = checkPositivity(-1);
       expect(func).toBeFalsy();
+    });
+  });
+
+  describe('Check date Difference Function', () => {
+    it('should return false', () => {
+      let func = dateDiff(moment().add(1, 'week'), moment.now());
+      expect(func).toBeFalsy();
+    });
+
+    it('should return true', () => {
+      let func = dateDiff(moment().add(3, 'months'), moment.now());
+      expect(func).toBeTruthy();
+    });
+  });
+
+
+  describe('dateFormat function', () => {
+    it('should return false', () => {
+      let format = 'DD MMM, YYYY';
+      let date = moment.now();
+      let expected = moment(date).format(format);
+      let func = dateFormat(date, format);
+      expect(func).toEqual(expected);
+    });
+  });
+
+
+  describe('transpose data function', () => {
+    it('should return key pair value with close and open dates', () => {
+      let rows = [
+        [
+          '1962-01-02',
+          38.5
+        ],
+        [
+          '1962-01-03',
+          38.87
+        ],
+        [
+          '1962-01-04',
+          39.88
+        ]
+      ];
+      let expected =[{'close': 38.5, 'date': '1962-01-02'}, {'close': 38.87, 'date': '1962-01-03'}, {'close': 39.88, 'date': '1962-01-04'}];
+      let func = transposeStock(rows);
+      console.log(func);
+      expect(func).toEqual(expected);
     });
   });
 });

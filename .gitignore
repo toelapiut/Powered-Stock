@@ -25,4 +25,4 @@ yarn-error.log*
  yarn.lock
  .env
 
-src/data.json
+src/data.json.env

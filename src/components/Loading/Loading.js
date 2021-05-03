@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export const Loading = ({size, thickness, speed, color, secondaryColor}) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-test={'loading-container'}>
       <SpinnerCircular
         size={size}
         thickness={thickness}

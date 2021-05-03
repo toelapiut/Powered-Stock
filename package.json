@@ -1,10 +1,9 @@
 {
   "name": "powered",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
-  "proxy": "https://powered-market.herokuapp.com",
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.14.0",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@craco/craco": "^6.1.2",
@@ -106,10 +105,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-react": "^7.13.13",
     "autoprefixer": "^9",
     "babel-jest": "^26.6.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
@@ -122,6 +123,7 @@
     "lint-staged": "^10.5.4",
     "postcss": "^7",
     "react-test-renderer": "^17.0.2",
+    "regenerator-runtime": "^0.13.7",
     "semantic-release": "^15.13.24",
     "standard-version": "^7.0.0",
     "stylelint-config-recommended": "^5.0.0",

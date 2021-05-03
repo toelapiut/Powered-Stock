@@ -9,22 +9,27 @@ import {getWindowDimensions} from '../../helper/utils';
 
 let dimensions = getWindowDimensions();
 let width = dimensions.width - 450;
-let height = dimensions.height- 150;
+let height = dimensions.height - 150;
 export const StockScreen = ({name, error, loading, date, onOpenCalendar, isOpen, ticker, start, end, onChangeDates, stocks}) => {
 
   if (typeof error !== 'undefined') {
-    return <Error/>;
+    return (
+      <div data-test={'error-container'}>
+        <Error/>
+      </div>
+    );
   }
 
   if (loading) {
     return (
-      <div className={styles.loader} style={{height:height, width:width}}>
+      <div className={styles.loader} style={{height: height, width: width}} data-test={'loading-container'}>
         <Loading/>
       </div>
     );
   }
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-test={'stock-screen-container'}>
       <Header
         date={date}
         isOpen={isOpen}
@@ -37,9 +42,12 @@ export const StockScreen = ({name, error, loading, date, onOpenCalendar, isOpen,
       />
       <div className={styles.areaClose}>
         {stocks.length > 1 &&
-        <AreaClose
-          stock={stocks}
-        />}
+          <div data-test={'area-close-container'}>
+            <AreaClose
+              stock={stocks}
+            />
+          </div>
+        }
       </div>
     </div>
   );

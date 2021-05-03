@@ -7,7 +7,7 @@ import styles from './header.module.css';
 
 export const Header = ({name, date, isOpen, onChangeDates, ticker, start, end, onOpenCalendar}) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-test={'header-container'}>
       <div>
         <h1 className={styles.ticker}>{ticker}</h1>
         <p className={styles.name}>{name}</p>
