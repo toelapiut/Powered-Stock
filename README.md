@@ -1,70 +1,84 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###
 
-## Available Scripts
+## Stocks By People
+#### [Live Stock by People Demo ](https://powered-stocks.netlify.app/)
+ 
+![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/toelapiut/cinema/LICENSE)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/toelapiut)
+![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)
 
-In the project directory, you can run:
 
-### `yarn start`
+![](./src/assets/images/screenshots/calendar.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
+This project provides a stock market environment using [Quandl](https://quandl.com) api to IPO stock data for free.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
+Just before you jump to the project get the environments right.
 
-### `yarn test`
+```
+node v12.16.1 and above
+package-manager(yarn or npm)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing
 
-### `yarn build`
+After creating the Prerequisites ready to clone the project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+First, clone cinema project using http and ssh respectively
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ git clone git@github.com:toelapiut/Powered-Stock.git powered
+$ git clone https://github.com/toelapiut/Powered-Stock.git powered
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then enter into the powered directory and install the packages using your favourite package-manager ```yarn``` or 
+```npm``` whichever you are comfortable in.
+After which you can run the command 
 
-### `yarn eject`
+```
+$ yarn start
+$ yarn test:watch
+$ yarn test:coverage
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+or 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ npm run start
+$ npm run test:watch
+$ npm run test:coverage
+```
+## Built With:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [Reactjs](https://reactjs.org/) - React makes it painless to create interactive UIs
+* [SWR](https://swr.vercel.app/) -SWR  is tool to help you optimise and simplify the logic of data fetching in your project
+* [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+* [VISX](https://airbnb.io/visx) - visx a collection of expressive, low-level visualization primitives for React
+* [Enzyme](https://enzymejs.github.io/enzyme/) -Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output.
+* [Yarn](https://yarnpkg.com/) - Yarn is a package manager that doubles down as project manager. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
+Please read CONTRIBUTING for details on our code of conduct, and the process for submitting pull requests to us.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
+* **[Apiut Toel](https://github.com/toelapiut)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Apple Stock
+* Airbnb for VISX
+* Hat tip to anyone whose code was used
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![forthebadge made-with-javascript](http://ForTheBadge.com/images/badges/made-with-javascript.svg)
