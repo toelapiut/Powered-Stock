@@ -13,7 +13,7 @@
 
 # misc
 .DS_Store
-.env.local
+.env
 .env.development.local
 .env.test.local
 .env.production.local
@@ -23,6 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 .idea/
  yarn.lock
- .env
 
 src/data.json
