@@ -189,7 +189,8 @@
     box-shadow: inset 0 0 1px 0 #3863a0;
 }
 .date_picker-week-day.is-not_selectable {
-    color: #e4e7ea;
+    color: #073058;
+    cursor: not-allowed;
 }
 .date_picker-notice {
     font-size: 11px;
